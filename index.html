@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>Lil' Search</title>
-<!-- Link Oswald font from Google Fonts -->
+<!-- Oswald font from Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
-<!-- Include Lemon Milk Pro font (replace with your actual font file if available) -->
+<!-- Lemon Milk Pro font (add your font file in the repo if you want) -->
 <style>
 @font-face {
     font-family: 'LemonMilkPro';
@@ -15,9 +15,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', 'LemonMilkPro', sans-serif; /* All words in Oswald, fallback to LemonMilkPro if used */
-    background-color: #121212; /* Dark background */
-    color: #AFC034; /* Font color */
+    font-family: 'Oswald', 'LemonMilkPro', sans-serif;
+    background-color: #121212;
+    color: #AFC034;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ body {
     font-size: 16px;
 }
 
-/* Style for header */
+/* Header styling */
 header {
     width: 100%;
     text-align: center;
@@ -38,7 +38,7 @@ header h1 {
     font-size: 2em;
 }
 
-/* Style for search form */
+/* Search form styling */
 #searchForm {
     display: flex;
     justify-content: center;
@@ -85,12 +85,12 @@ button:hover {
 </form>
 
 <script>
-    document.getElementById('searchForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const query = document.getElementById('query').value;
-        // Redirect in the same tab without opening new tab
-        window.location.href = `/search?query=${encodeURIComponent(query)}`;
-    });
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('query').value;
+    // Redirect to DuckDuckGo with the query
+    window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+});
 </script>
 </body>
 </html>
