@@ -25,7 +25,6 @@ body {
     font-size: 16px;
 }
 
-/* Header styling */
 header {
     width: 100%;
     text-align: center;
@@ -38,7 +37,6 @@ header h1 {
     font-size: 2em;
 }
 
-/* Search form styling */
 #searchForm {
     display: flex;
     justify-content: center;
@@ -88,7 +86,7 @@ button:hover {
 document.getElementById('searchForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const query = document.getElementById('query').value;
-    // Redirect to DuckDuckGo with the query
+    // Search DuckDuckGo in the same tab
     window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
 });
 </script>
