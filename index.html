@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Lil' Search</title>
+<!-- Link Oswald font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+<!-- Include Lemon Milk Pro font (replace with your actual font file if available) -->
+<style>
+@font-face {
+    font-family: 'LemonMilkPro';
+    src: url('lemon-milk-pro.woff') format('woff');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', 'LemonMilkPro', sans-serif; /* All words in Oswald, fallback to LemonMilkPro if used */
+    background-color: #121212; /* Dark background */
+    color: #AFC034; /* Font color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+/* Style for header */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2em;
+}
+
+/* Style for search form */
+#searchForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#query {
+    width: 300px;
+    padding: 10px;
+    font-family: 'Oswald', 'LemonMilkPro', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: 'Oswald', 'LemonMilkPro', sans-serif;
+    font-size: 16px;
+    margin-left: -5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #AFC034;
+    color: #121212;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8AA02A;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Lil' Search</h1>
+</header>
+
+<form id="searchForm">
+    <input type="text" id="query" placeholder="Enter search term" required />
+    <button type="submit">Search</button>
+</form>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const query = document.getElementById('query').value;
+        // Redirect in the same tab without opening new tab
+        window.location.href = `/search?query=${encodeURIComponent(query)}`;
+    });
+</script>
+</body>
+</html>
